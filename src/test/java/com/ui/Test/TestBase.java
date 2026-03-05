@@ -17,18 +17,18 @@ import org.testng.annotations.Parameters;
 public class TestBase {
     protected HomePage homePage;
     Logger logger = LoggerUtility.getLogger(this.getClass());
-    private boolean isLamdaTest;
+    private boolean isLambdaTest;
 
 
     @Parameters({"browser", "isLambdaTest", "isHeadless"})
     @BeforeMethod(description = "Load the Homepage of the website")
     public void setUp(
             @Optional("chrome") String browser,
-            @Optional("false") boolean isLamdaTest,
-            @Optional("true") boolean isHeadless, ITestResult result) {
-        this.isLamdaTest = isLamdaTest;
+            @Optional("true") boolean isLambdaTest,
+            @Optional("false") boolean isHeadless, ITestResult result) {
+        this.isLambdaTest = isLambdaTest;
         WebDriver lamdaDriver;
-        if (isLamdaTest) {
+        if (isLambdaTest) {
             lamdaDriver = LamdaTestUtility.initializeLambdaTestSession(browser, result.getMethod().getMethodName());
             homePage = new HomePage(lamdaDriver);
 
@@ -44,7 +44,7 @@ public class TestBase {
 
     @AfterMethod(description = "Tear Down the browser")
     public void tearDown() {
-        if (isLamdaTest) {
+        if (isLambdaTest) {
             LamdaTestUtility.quitSession();
         } else {
             homePage.quit();

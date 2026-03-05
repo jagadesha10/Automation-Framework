@@ -28,7 +28,7 @@
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                         <systemPropertyVariables>
-                            <browser>browser</browser>
+                            <browser>chrome</browser>
                             <isLambdaTest>isLambdaTest</isLambdaTest>
                             <isHeadless>isHeadless</isHeadless>
                         </systemPropertyVariables>

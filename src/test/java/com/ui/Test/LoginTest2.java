@@ -25,7 +25,7 @@ public class LoginTest2 extends TestBase {
 //
 //         assertEquals(homePage.goToLoginPage().doLoginWith("lofegon421@2insp.com","Password1234").getUserName(),"Jagadish R");
 //    }
-    @Test(description = "Verifies with the valid user is able to login into the application", groups = {"e2e", "sanity"}, dataProviderClass = LoginDataProvider.class, dataProvider = "LoginTestCSVDataProvider",
+    @Test(description = "Verifies with the valid user is able to login into the application", groups = {"e2e", "sanity"}, dataProviderClass = LoginDataProvider.class, dataProvider = "LoginTestExcelDataProvider",
     retryAnalyzer = MyRetryAnalyzer.class)
     public void LoginExcelTest(User user) {
         assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(), "Jagadish R");

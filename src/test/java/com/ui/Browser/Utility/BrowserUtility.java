@@ -19,6 +19,10 @@ public abstract class BrowserUtility {
     //    private WebDriver driver;
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
+    public BrowserUtility(Browser browserName, boolean isHeadless, boolean isLambdaTest) {
+
+    }
+
     public WebDriver getDriver() {
         return driver.get();
     }
